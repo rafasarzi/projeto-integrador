@@ -9,6 +9,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
   
 
   <title>Modelo</title>
@@ -16,21 +18,25 @@
 <body>
   {% block menu %}
   <div class="bg-light">
+    <nav></nav>
     menu
   </div>
   {% endblock %}
   {% block destaque %}
   <div class="bg-secondary">
+    <img src="" alt="">
     figura de destaque
   </div>
   {% endblock %}
   {% block conteudo %}
   <div class="container">
+    ajustar os tamanhos
     <h1>conteudo </h1>
   </div>
   {% endblock %}
   {% block footer %}
   <div class="bg-light">
+    <footer></footer>
     footer
   </div>
   {% endblock %}
