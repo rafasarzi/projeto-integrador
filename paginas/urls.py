@@ -1,6 +1,8 @@
 from django.urls import path
 from django.urls import path
 from .views import CadastroCreate, SobreView, InicioView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', InicioView.as_view(), name='index'),
@@ -18,4 +20,4 @@ urlpatterns = [
     # # path('professores/', PaginaProfessores.as_view(), name='professores'),
     # # path('aulas/', PaginaAulas.as_view(), name='aulas'),
     # # path('caixa/', PaginaCaixa.as_view(), name='caixa'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
