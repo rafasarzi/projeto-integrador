@@ -2,7 +2,7 @@ from django.db import models
 
 
 class CadastroAlunos(models.Model):
-    name = models.CharField(max_length=50)
+    nome = models.CharField(max_length=50)
     cpf = models.DecimalField(decimal_places=1, max_digits=11)
     idade = models.CharField(max_length=50)
     email = models.EmailField(max_length=155)

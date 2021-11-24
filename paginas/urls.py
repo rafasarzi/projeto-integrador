@@ -1,10 +1,14 @@
 from django.urls import path
 from django.urls import path
-from .views import CadastroCreate
+from .views import CadastroCreate, SobreView, InicioView
 
 urlpatterns = [
+    path('', InicioView.as_view(), name='index'),
+
+    path('sobre/', SobreView.as_view(), name='sobre'),
 
     path('paginas/cadastro/', CadastroCreate.as_view(), name='cadastrar-aluno'),
+
 
 
     # # path('', CreateView.as_view(), name='home'),
