@@ -1,64 +1,58 @@
 
-
+ {% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
- 
-  {% load static %}
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static '/css/style.css' %}">
-
-  
-
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <title>Modelo</title>
 </head>
 <body>
   {% block menu %}
-  <nav>
-    <ul class="nav nav-tabs justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active a" aria-current="page" href="#">Home</a>
-      </li>
-      <li class="nav-item a">
-        <a class="nav-link" href="#">Cadastro Alunos</a>
-      </li>
-      <li class="nav-item a">
-        <a class="nav-link" href="#">Cadastro Professores</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cadastro Terapias</a>
-      </li>
-    </ul>
-  </nav>
-  {% endblock %}
+    <nav class="nav nav-expand-lg nav-light bg-light justify-content-center">
+        <ul class="nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Alunos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profissionais</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Terapias</a>
+          </li>
+        </ul>
+    </nav>
+  {% endblock %} 
+  <div class="container"> 
   {% block banner %}
-  <div class="container" style="margin-top: 30px;">
-    <div class="row" style="    justify-content: center; ">
-      <div class="banner col-10" style="text-align: center;">
-        <img src="{% static 'img/Logo Viva_Horizontal.png' %}" height="200px"  alt="">
-      </div>
+    <div style="text-align: center;">
+      <img src="{% static 'img/Logo Viva_Horizontal.png' %}" width="100%" alt="">
     </div>
-  </div>
   {% endblock %}
   {% block conteudo %}
-  <div class="container">
+
     ajustar os tamanhos
     <h1>conteudo </h1>
-  </div>
+
   {% endblock %}
+  </div>
   {% block footer %}
   <div class="bg-light">
-    <footer></footer>
-    footer
+    <footer> footer</footer>
   </div>
   {% endblock %}
-
+  <script src="{% static 'js/jquery-3.6.0.min.js'  %}"></script>
   <script src="{% static 'js/scripts.js'  %}"></script>
   <script src="{% static 'js/js/bootstrap.min.js'  %}"></script>
-  <script src="{% static 'js/jquery-3.6.0.min.js'  %}"></script>
+  <script src="{% static 'js/js/bootstrap.bundle.min.js'  %}"></script>
+
+  
 
 </body>
 </html>

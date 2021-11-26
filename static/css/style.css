@@ -1,1 +1,7 @@
-
+.nav > li > a {
+  color: rgb(129, 127, 127);
+}
+.nav > li:hover > a,
+.nav > li.active > a {
+  color: #C79A4B;
+}
