@@ -9,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
 
   
 
@@ -17,15 +17,30 @@
 </head>
 <body>
   {% block menu %}
-  <div class="bg-light">
-    <nav></nav>
-    menu
-  </div>
+  <nav>
+    <ul class="nav nav-tabs justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active a" aria-current="page" href="#">Home</a>
+      </li>
+      <li class="nav-item a">
+        <a class="nav-link" href="#">Cadastro Alunos</a>
+      </li>
+      <li class="nav-item a">
+        <a class="nav-link" href="#">Cadastro Professores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cadastro Terapias</a>
+      </li>
+    </ul>
+  </nav>
   {% endblock %}
-  {% block destaque %}
-  <div class="bg-secondary">
-    <img src="" alt="">
-    figura de destaque
+  {% block banner %}
+  <div class="container" style="margin-top: 30px;">
+    <div class="row" style="    justify-content: center; ">
+      <div class="banner col-10" style="text-align: center;">
+        <img src="{% static 'img/Logo Viva_Horizontal.png' %}" height="200px"  alt="">
+      </div>
+    </div>
   </div>
   {% endblock %}
   {% block conteudo %}

@@ -1,7 +1,7 @@
 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import TemplateView
-from paginas.models import CadastroAlunos
+from paginas.models import CadastroAlunos, CadastroProfissional, CadastroTerapia
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -34,5 +34,42 @@ class SobreView(TemplateView):
 class CadastroCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroAlunos
-    fields = ['nome', 'cpf', 'idade', 'email', 'telefone', ]
-    success_url = reverse_lazy('home')
+    fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
+    success_url = reverse_lazy('cadastrar-aluno')
+
+
+class ProfissionalCreate(CreateView):
+    template_name = 'paginas/cadastro.html'
+    model = CadastroProfissional
+    fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
+    success_url = reverse_lazy('cadastrar-professor')
+
+
+class TerapiaCreate(CreateView):
+    template_name = 'paginas/cadastro.html'
+    model = CadastroTerapia
+    fields = ['terapia']
+    success_url = reverse_lazy('cadastrar-terapia')
+
+########## UPDATE ##########
+
+
+class CadastroUpdate(UpdateView):
+    template_name = 'paginas/cadastro.html'
+    model = CadastroAlunos
+    fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
+    success_url = reverse_lazy('cadastrar-aluno')
+
+
+class ProfissionalUpdate(UpdateView):
+    template_name = 'paginas/cadastro.html'
+    model = CadastroProfissional
+    fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
+    success_url = reverse_lazy('cadastrar-professor')
+
+
+class TerapiaUpdate(UpdateView):
+    template_name = 'paginas/cadastro.html'
+    model = CadastroTerapia
+    fields = ['terapia']
+    success_url = reverse_lazy('cadastrar-terapia')
