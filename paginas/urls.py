@@ -1,6 +1,9 @@
 from django.urls import path
 from django.urls import path
-from .views import CadastroCreate, SobreView, InicioView
+
+
+from .views import CadastroCreate, SobreView, InicioView, ProfissionalCreate, TerapiaCreate
+from .views import CadastroUpdate, ProfissionalUpdate, TerapiaUpdate
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -9,7 +12,23 @@ urlpatterns = [
 
     path('sobre/', SobreView.as_view(), name='sobre'),
 
-    path('paginas/cadastro/', CadastroCreate.as_view(), name='cadastrar-aluno'),
+    path('aluno/', CadastroCreate.as_view(),
+         name='cadastrar-aluno'),
+
+    path('profissional/', ProfissionalCreate.as_view(),
+         name='cadastrar-profissional'),
+
+    path('terapias/', TerapiaCreate.as_view(),
+         name='cadastrar-terapias'),
+
+    path('editar/aluno/<int:pk>', CadastroUpdate.as_view(),
+         name='editar-aluno'),
+
+    path('editar/profissional/<int:pk>', ProfissionalUpdate.as_view(),
+         name='editar-profissional'),
+
+    path('editar/terapias/<int:pk>', TerapiaUpdate.as_view(),
+         name='editar-terapia'),
 
 
 
