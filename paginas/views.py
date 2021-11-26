@@ -2,7 +2,7 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
-from paginas.models import CadastroAlunos, CadastroProfissional, CadastroTerapia
+from paginas.models import CadastroAluno, CadastroProfissional, CadastroTerapia
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -34,7 +34,7 @@ class SobreView(TemplateView):
 ########## CRIAR ##########
 class CadastroCreate(CreateView):
     template_name = 'paginas/cadastro.html'
-    model = CadastroAlunos
+    model = CadastroAluno
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
     success_url = reverse_lazy('cadastrar-aluno')
 
@@ -57,7 +57,7 @@ class TerapiaCreate(CreateView):
 
 class CadastroUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
-    model = CadastroAlunos
+    model = CadastroAluno
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
     success_url = reverse_lazy('cadastrar-aluno')
 
@@ -80,7 +80,7 @@ class TerapiaUpdate(UpdateView):
 
 class CadastroDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
-    model = CadastroAlunos
+    model = CadastroAluno
     success_url = reverse_lazy('cadastrar-aluno')
 
 
@@ -100,7 +100,7 @@ class TerapiaDelete(DeleteView):
 
 class CadastroList(ListView):
     template_name = 'paginas/listar/alunos.html'
-    model = CadastroAlunos
+    model = CadastroAluno
 
 
 class ProfissionalList(ListView):

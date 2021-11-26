@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class CadastroAlunos(models.Model):
+class CadastroAluno(models.Model):
     nome = models.CharField(max_length=50)
     cpf = models.IntegerField()
     idade = models.CharField(max_length=50)

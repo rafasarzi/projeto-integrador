@@ -14,7 +14,25 @@
         <th>Telefone</th>
         <th>Opções</th>
       </tr>
+      
+      {% for aluno in object_list %}
+      <tr>
+        <td>{{ aluno.nome }}</td>
+        <td>{{ aluno.cpf }}</td>
+        <td>{{ aluno.idade }}</td>
+        <td>{{ aluno.email }}</td>
+        <td>{{ aluno.telefone }}</td>
+        <td>
+          <a class="btn btn-warning btn-sm">Editar</a>
+          <a class="btn btn-danger btn-sm">Excluir</a>
+
+        </td>
+      </tr>
+      {% empty %}
+      <tr colspan="6">Não a nenhum registo!</tr>
+      {% endfor %}
     </table>
+   
   </div> 
 
 {% endblock %}
