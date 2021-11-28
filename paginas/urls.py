@@ -2,7 +2,7 @@ from django.urls import path
 from django.urls import path
 
 
-from .views import CadastroCreate, SobreView, InicioView, ProfissionalCreate, TerapiaCreate
+from .views import CadastroCreate, CadastroDelete, ProfissionalDelete, SobreView, InicioView, ProfissionalCreate, TerapiaCreate, TerapiaDelete
 from .views import CadastroUpdate, ProfissionalUpdate, TerapiaUpdate
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,14 @@ urlpatterns = [
     path('editar/terapia/<int:pk>', TerapiaUpdate.as_view(),
          name='editar-terapia'),
 
+    path('excluir/aluno/<int:pk>', CadastroDelete.as_view(),
+         name='excluir-aluno'),
+
+    path('excluir/profissional/<int:pk>', ProfissionalDelete.as_view(),
+         name='excluir-profissional'),
+
+    path('excluir/terapia/<int:pk>', TerapiaDelete.as_view(),
+         name='excluir-terapia'),
 
 
     # # path('', CreateView.as_view(), name='home'),

@@ -25,7 +25,8 @@ class CadastroProfissional(models.Model):
 
 class CadastroTerapia(models.Model):
 
-    terapia = models.CharField(max_length=155)
+    terapia = models.CharField(max_length=155, default="")
+    descricao = models.CharField(max_length=300, default="")
 
     def __str__(self):
-        return "{} ({})" .format(self.terapia)
+        return "{} ({})" .format(self.terapia, self.descricao)
