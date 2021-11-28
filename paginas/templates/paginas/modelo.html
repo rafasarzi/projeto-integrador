@@ -18,38 +18,34 @@
 
 <body>
     {% block menu %}
-    <nav class="nav nav-expand-lg nav-light bg-light justify-content-center">        
+    
+    <nav class="nav nav-expand-lg nav-light bg-light" style="padding: 10px;">         
         <ul class="nav menu-cadastros">
             <li class="nav-item">
-                <a class="nav-link active a" aria-current="page" href="/">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Projeto Integrador</a>
             </li>
             <li class="nav-item a">
-                <a class="nav-link" href="/aluno/">Cadastrar Alunos</a>
+                <a class="nav-link" href="{% url 'listar-aluno'%}">Alunos</a>
             </li>
             <li class="nav-item a">
-                <a class="nav-link" href="/profissional/ ">Cadastrar Professores</a>
+                <a class="nav-link" href="{% url 'listar-profissional'%}">Profissionais</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="/terapia/ ">Cadastrar Terapias</a>
+                <a class="nav-link " href="{% url 'listar-terapia'%}">Terapias</a>
             </li>
         </ul>
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              Cadastros
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end bg-light">
+              <li><button onclick="window.location.href='/aluno/'" class="dropdown-item" type="button">Cadastrar Alunos</button></li>
+              <li><button onclick="window.location.href='/profissional/'" class="dropdown-item" type="button">Cadastrar Professores</button></li>
+              <li><button onclick="window.location.href='/terapia/'" class="dropdown-item" type="button">Cadastrar Terapias</button></li>
+            </ul>
+          </div>
     </nav>
-    {% endblock %} 
-    {% block menu-listar %}
-    <nav class="nav nav-expand-lg nav-light"   style="font-size: smaller;">        
-        <ul class="nav menu-listas">
-            <li class="nav-item a">
-                <a class="nav-link" href="/aluno/">Listar Alunos</a>
-            </li>
-            <li class="nav-item a">
-                <a class="nav-link" href="/profissional/ ">Listar Professores</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link " href="/terapia/ ">Listar Terapias</a>
-            </li>
-        </ul>
-    </nav>
-    {% endblock %} 
+    {% endblock %}  
     {% block banner %}
             <div class="banner" style="text-align: center; padding:20px;">
                 <img src="{% static 'img/Logo Viva_Horizontal.png' %} "  width="300px"alt=" ">
@@ -65,10 +61,10 @@
     {% endblock %} 
     {% block footer %}
     <div class="footer">
-    <footer class="bg-light text-center text-lg-start ">
+    <footer class="bg-secondary text-center text-lg-start ">
       <!-- Copyright -->
-      <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2); ">
-        © 2021 Copyright: <span class="text-dark "> Univesp Projeto Integrador: Grupo 001- Polo Tatuí</span>
+      <div class="text-center p-3 bg-secondary text-light">
+        © 2021 Copyright: <span class="text-light"> Univesp Projeto Integrador: Grupo 001- Polo Tatuí</span>
       </div>
       <!-- Copyright -->
     </footer>
@@ -77,6 +73,7 @@
 
     <script src="{% static 'js/scripts.js' %} "></script>
     <script src="{% static 'js/js/bootstrap.min.js' %} "></script>
+    <script src="{% static 'js/js/bootstrap.bundle.min.js' %} "></script>
     <script src="{% static 'js/jquery-3.6.0.min.js' %} "></script>
 
 </body>

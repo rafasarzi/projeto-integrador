@@ -20,6 +20,9 @@ body {
 .nav > li.active > a {
   color: #c79a4b;
 }
+.text-warning {
+  color: #c79a4b;
+}
 /* .navbar .navbar-brand img {
   width: 50%;
   height: 50%;
