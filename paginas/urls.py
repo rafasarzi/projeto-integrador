@@ -16,10 +16,10 @@ urlpatterns = [
          name='cadastrar-aluno'),
 
     path('profissional/', ProfissionalCreate.as_view(),
-         name='cadastrar-profissional'),
+         name='cadastrar-professor'),
 
-    path('terapias/', TerapiaCreate.as_view(),
-         name='cadastrar-terapias'),
+    path('terapia/', TerapiaCreate.as_view(),
+         name='cadastrar-terapia'),
 
     path('editar/aluno/<int:pk>', CadastroUpdate.as_view(),
          name='editar-aluno'),
@@ -27,7 +27,7 @@ urlpatterns = [
     path('editar/profissional/<int:pk>', ProfissionalUpdate.as_view(),
          name='editar-profissional'),
 
-    path('editar/terapias/<int:pk>', TerapiaUpdate.as_view(),
+    path('editar/terapia/<int:pk>', TerapiaUpdate.as_view(),
          name='editar-terapia'),
 
 

@@ -18,8 +18,8 @@
 
 <body>
     {% block menu %}
-    <nav>
-        <ul class="nav nav-tabs justify-content-center">
+    <nav class="nav nav-expand-lg nav-light bg-light justify-content-center">        
+        <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link active a" aria-current="page" href="/">Home</a>
             </li>
@@ -27,10 +27,10 @@
                 <a class="nav-link" href="/aluno/">Cadastro Alunos</a>
             </li>
             <li class="nav-item a">
-                <a class="nav-link" href=/profissional/ ">Cadastro Professores</a>
+                <a class="nav-link" href="/profissional/ ">Cadastro Professores</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link " href="/terapias/ ">Cadastro Terapias</a>
+                <a class="nav-link " href="/terapia/ ">Cadastro Terapias</a>
             </li>
         </ul>
     </nav>
@@ -50,6 +50,7 @@
       </p>
     </div>
     {% endblock %} {% block footer %}
+    <div class="footer">
     <footer class="bg-light text-center text-lg-start ">
       <!-- Copyright -->
       <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2); ">
@@ -57,6 +58,7 @@
       </div>
       <!-- Copyright -->
     </footer>
+</div>
     {% endblock %}
 
     <script src="{% static 'js/scripts.js' %} "></script>
