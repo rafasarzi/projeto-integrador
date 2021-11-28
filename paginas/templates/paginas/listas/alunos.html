@@ -1,0 +1,34 @@
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+{% block conteudo %}
+<h3>Lista de Alunos Registros</h3>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Idade</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Opções</th>
+    </tr>
+    {% for alunos in object_list %}
+    <tr>
+      <td>{{alunos.nome}}</td>
+      <td>{{alunos.cpf}}</td>
+      <td>{{alunos.idade}}</td>
+      <td>{{alunos.email}}</td>
+      <td>{{alunos.telefone}}</td>
+      <td>
+        <a href="{% url 'editar-aluno' alunos.pk %}" class="btn btn-warning btn-sm">Editar</a> 
+        <a href="{% url 'excluir-aluno' alunos.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="6">Nenhum aluno registrado.</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

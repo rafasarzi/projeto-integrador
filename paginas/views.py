@@ -1,5 +1,6 @@
 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.list import ListView
 from django.views.generic import TemplateView
 from paginas.models import CadastroAlunos, CadastroProfissional, CadastroTerapia
 from django.urls import reverse_lazy
@@ -93,3 +94,20 @@ class TerapiaDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroTerapia
     success_url = reverse_lazy('cadastrar-terapia')
+
+########## LISTAR ##########
+
+
+class CadastroList(ListView):
+    template_name = 'paginas/listas/alunos.html'
+    model = CadastroAlunos
+
+
+class ProfissionalList(ListView):
+    template_name = 'paginas/listas/professores.html'
+    model = CadastroProfissional
+
+
+class TerapiaList(ListView):
+    template_name = 'paginas/listas/aulas.html'
+    model = CadastroTerapia
