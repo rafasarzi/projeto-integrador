@@ -2,7 +2,7 @@
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.views.generic import TemplateView
-from paginas.models import CadastroAluno, CadastroProfissional, CadastroTerapia
+from paginas.models import CadastroAluno, CadastroEntrada, CadastroProfissional
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -36,22 +36,21 @@ class CadastroCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroAluno
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroProfissional
     fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
 
-class TerapiaCreate(CreateView):
+class EntradaCreate(CreateView):
     template_name = 'paginas/cadastro.html'
-    model = CadastroTerapia
-    fields = ['terapia']
-    success_url = reverse_lazy('cadastrar-terapia')
-
+    model = CadastroEntrada
+    fields = ['valor', 'descrição']
+    success_url = reverse_lazy('index')
 ########## UPDATE ##########
 
 
@@ -59,21 +58,15 @@ class CadastroUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroAluno
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroProfissional
     fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
-
-class TerapiaUpdate(UpdateView):
-    template_name = 'paginas/cadastro.html'
-    model = CadastroTerapia
-    fields = ['terapia']
-    success_url = reverse_lazy('cadastrar-terapia')
 
 ########## DELETE ##########
 
@@ -81,19 +74,14 @@ class TerapiaUpdate(UpdateView):
 class CadastroDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroAluno
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroProfissional
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
-
-class TerapiaDelete(DeleteView):
-    template_name = 'paginas/cadastro-excluir.html'
-    model = CadastroTerapia
-    success_url = reverse_lazy('cadastrar-terapia')
 
 ########## LISTA ##########
 
@@ -106,8 +94,3 @@ class CadastroList(ListView):
 class ProfissionalList(ListView):
     template_name = 'paginas/listar/profissionais.html'
     model = CadastroProfissional
-
-
-class TerapiaList(ListView):
-    template_name = 'paginas/listar/terapias.html'
-    model = CadastroTerapia

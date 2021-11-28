@@ -23,9 +23,17 @@ class CadastroProfissional(models.Model):
         return "{} ({})" .format(self.nome, self.cpf, self.email, self.telefone, self.terapia)
 
 
-class CadastroTerapia(models.Model):
-
-    terapia = models.CharField(max_length=155)
+class CadastroEntrada(models.Model):
+    valor = models.IntegerField()
+    descricao = models.CharField(max_length=300)
 
     def __str__(self):
-        return "{} ({})" .format(self.terapia)
+        return "{} ({})" .format(self.valor, self.descricao)
+
+
+class CadastroSaida(models.Model):
+    valor = models.IntegerField()
+    descricao = models.CharField(max_length=300)
+
+    def __str__(self):
+        return "{} ({})" .format(self.valor, self.descricao)

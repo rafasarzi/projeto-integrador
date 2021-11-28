@@ -1,0 +1,41 @@
+
+{% extends 'paginas/modelo.html' %}
+{% load static %}
+{% block conteudo %}
+  <h3>Lista de Profissionais Registrados.</h3>
+  <hr>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Terapias</th>
+        <th>Opções</th>
+      </tr>
+      
+      {% for profissional in object_list %}
+      <tr>
+        <td>{{ profissional.nome }}</td>
+        <td>{{ profissional.cpf }}</td>
+        <td>{{ profissional.email }}</td>
+        <td>{{ profissional.telefone }}</td>
+        <td>{{ profissional.terapia }}</td>
+        <td>
+          <a href="{% url 'editar-profissional' profissional.pk %}" class="btn btn-warning btn-sm" title="Editar">+</a>
+          <a href="{% url 'excluir-profissional' profissional.pk %}" class="btn btn-danger btn-sm" title="Excluir">x</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr colspan="6">Não a nenhum registo!</tr>
+      {% endfor %}
+    </table>
+   
+  </div> 
+
+{% endblock %}
+
+
+
+
