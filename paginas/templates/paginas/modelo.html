@@ -45,13 +45,13 @@
               {{ request.user }}
             </button>
             <ul class="dropdown-menu dropdown-menu-lg-end bg-light">
-              <li><button onclick="window.location.href='/aluno/'" class="dropdown-item" type="button">Meus dados</button></li>
-              <li><button onclick="window.location.href='/profissional/'" class="dropdown-item" type="button">Alterar Senha</button></li>
+              <!-- <li><button onclick="window.location.href='/aluno/'" class="dropdown-item" type="button">Meus dados</button></li>
+              <li><button onclick="window.location.href='/profissional/'" class="dropdown-item" type="button">Alterar Senha</button></li> -->
               <li><button onclick="window.location.href='/logout/'" class="dropdown-item" type="button">Sair</button></li>
             </ul>
             {% else %}
             <li class="nav-item ">
-              <a class="nav-link " href="{% url 'login'%}">Login</a>
+              <a class="nav-link btn-secondary text-light" href="{% url 'login'%}">Login</a>
           </li>
             {% endif %}
           </div>
