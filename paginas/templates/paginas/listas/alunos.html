@@ -3,13 +3,11 @@
  
 
 {% block conteudo %}
-<div class="btn-inicio">
-<a href="{% url 'index'%}" class="btn btn-primary btn-sm">Início</a>
-</div>
+
 <div class="container">
 <h3>Lista de Alunos Registros</h3>
 <hr>
-<a href="{% url 'cadastrar-aluno'%}" class="btn btn-primary btn-sm">Novo</a> 
+<a href="{% url 'cadastrar-aluno'%}" class="btn btn-primary btn-sm">Adicionar Aluno</a> 
 <hr>
 <br>
 <div class="table-responsive">
@@ -41,5 +39,8 @@
     {% endfor %}
   </table>
 </div>
+<div class="btn-inicio">
+  <a href="{% url 'index'%}" class="btn btn-primary btn-sm">Início</a>
+  </div>
 </div>
 {% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends 'paginas/modelo.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block menu %}
+{% endblock %}
+
+{% block conteudo %}
+   {% block form %}
+   <div class="container">
+     <div class="row">
+    <div class="col-md-5 mx-auto">
+      <br>
+      <h3>Coloque usuário e senha para entrar!</h3>
+      <hr>
+      <br>
+        <form action="" method="post">
+             {% csrf_token %}
+             {{ form|crispy }}
+             <br>
+             <input type="submit" class="btn btn-primary btn-sm" value="Enviar">
+        </form>
+      </div>
+      </div>
+      </div>
+      {% endblock %}
+      {% endblock %}
+</body>
+</html>
+
+
+

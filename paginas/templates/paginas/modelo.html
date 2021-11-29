@@ -20,10 +20,13 @@
     {% block menu %}
     
     <nav class="nav nav-expand-lg nav-light bg-light" style="padding: 10px;">         
-        <ul class="nav menu-cadastros">
+        <ul class="nav menu-cadastros col-10">
+
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Projeto Integrador</a>
             </li>
+          {% if request.user.is_authenticated  %}
+
             <li class="nav-item a">
                 <a class="nav-link" href="{% url 'listar-aluno'%}">Alunos</a>
             </li>
@@ -33,11 +36,30 @@
             <li class="nav-item ">
                 <a class="nav-link " href="{% url 'listar-terapia'%}">Terapias</a>
             </li>
+            {% endif %}
+
         </ul>
+        <div class="btn-group">
+          {% if request.user.is_authenticated  %}
+            <button type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+              {{ request.user }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-lg-end bg-light">
+              <li><button onclick="window.location.href='/aluno/'" class="dropdown-item" type="button">Meus dados</button></li>
+              <li><button onclick="window.location.href='/profissional/'" class="dropdown-item" type="button">Alterar Senha</button></li>
+              <li><button onclick="window.location.href='/logout/'" class="dropdown-item" type="button">Sair</button></li>
+            </ul>
+            {% else %}
+            <li class="nav-item ">
+              <a class="nav-link " href="{% url 'login'%}">Login</a>
+          </li>
+            {% endif %}
+          </div>
+          
     </nav>
     {% endblock %}  
     {% block banner %}
-            <div class="banner" style="text-align: center; padding:20px;">
+            <div class="banner" style="text-align: center; padding:20px; margin-top: 30px;">
                 <img src="{% static 'img/Logo Viva_Horizontal.png' %} "  width="300px"alt=" ">
             </div>
     {% endblock %} 
@@ -50,15 +72,14 @@
     </div>
     {% endblock %} 
     {% block footer %}
-  
-    <footer class="bg-secondary ">
+    <footer class="bg-secondary text-center text-lg-start ">
       <!-- Copyright -->
       <div class="text-center bg-secondary text-light">
         © 2021 Copyright: <span class="text-light"> Univesp Projeto Integrador: Grupo 001- Polo Tatuí</span>
       </div>
       <!-- Copyright -->
     </footer>
-</div>
+
     {% endblock %}
 
     <script src="{% static 'js/scripts.js' %} "></script>
