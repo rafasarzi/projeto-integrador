@@ -36,21 +36,21 @@ class CadastroCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroAlunos
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroProfissional
     fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
 
 class TerapiaCreate(CreateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroTerapia
-    fields = ['terapia']
-    success_url = reverse_lazy('cadastrar-terapia')
+    fields = ['terapia', 'descrição']
+    success_url = reverse_lazy('listar-terapia')
 
 ########## UPDATE ##########
 
@@ -59,21 +59,21 @@ class CadastroUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroAlunos
     fields = ['nome', 'cpf', 'idade', 'email', 'telefone']
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroProfissional
     fields = ['nome', 'cpf', 'email', 'telefone', 'terapia']
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
 
 class TerapiaUpdate(UpdateView):
     template_name = 'paginas/cadastro.html'
     model = CadastroTerapia
     fields = ['terapia', 'descrição']
-    success_url = reverse_lazy('cadastrar-terapia')
+    success_url = reverse_lazy('listar-terapia')
 
 ########## DELETE ##########
 
@@ -81,19 +81,19 @@ class TerapiaUpdate(UpdateView):
 class CadastroDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroAlunos
-    success_url = reverse_lazy('cadastrar-aluno')
+    success_url = reverse_lazy('listar-aluno')
 
 
 class ProfissionalDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroProfissional
-    success_url = reverse_lazy('cadastrar-professor')
+    success_url = reverse_lazy('listar-profissional')
 
 
 class TerapiaDelete(DeleteView):
     template_name = 'paginas/cadastro-excluir.html'
     model = CadastroTerapia
-    success_url = reverse_lazy('cadastrar-terapia')
+    success_url = reverse_lazy('listar-terapia')
 
 ########## LISTAR ##########
 

@@ -1,7 +1,17 @@
 {% extends 'paginas/modelo.html' %}
 {% load static %}
+ 
+
 {% block conteudo %}
+<div class="btn-inicio">
+<a href="{% url 'index'%}" class="btn btn-primary btn-sm">Início</a>
+</div>
+<div class="container">
 <h3>Lista de Alunos Registros</h3>
+<hr>
+<a href="{% url 'cadastrar-aluno'%}" class="btn btn-primary btn-sm">Novo</a> 
+<hr>
+<br>
 <div class="table-responsive">
   <table class="table table-striped">
     <tr>
@@ -30,5 +40,6 @@
     </tr>
     {% endfor %}
   </table>
+</div>
 </div>
 {% endblock %}

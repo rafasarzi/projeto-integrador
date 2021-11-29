@@ -52,3 +52,10 @@ form input {
   display: flex;
   align-items: center;
 }
+.btn-inicio {
+  text-align: right;
+  margin: 15px;
+}
+.container {
+  text-align: -webkit-center;
+}

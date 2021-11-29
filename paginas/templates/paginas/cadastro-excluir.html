@@ -1,5 +1,6 @@
 
 {% extends 'paginas/modelo.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block conteudo %}
    {% block form %}
@@ -13,7 +14,7 @@
           <br>
           <p>Deseje apagar o resgistro definitivamente:{{ object }}?</p>
              {% csrf_token %}
-             {{ form.as_p }}
+             {{ form|crispy}}
              <input type="submit" class="btn btn-danger btn-sm" value="Apagar">
         </form>
       </div>

@@ -34,16 +34,6 @@
                 <a class="nav-link " href="{% url 'listar-terapia'%}">Terapias</a>
             </li>
         </ul>
-        <div class="btn-group">
-            <button type="button" class="btn btn-secondary dropdown-toggle btn-sm" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-              Cadastros
-            </button>
-            <ul class="dropdown-menu dropdown-menu-lg-end bg-light">
-              <li><button onclick="window.location.href='/aluno/'" class="dropdown-item" type="button">Cadastrar Alunos</button></li>
-              <li><button onclick="window.location.href='/profissional/'" class="dropdown-item" type="button">Cadastrar Professores</button></li>
-              <li><button onclick="window.location.href='/terapia/'" class="dropdown-item" type="button">Cadastrar Terapias</button></li>
-            </ul>
-          </div>
     </nav>
     {% endblock %}  
     {% block banner %}
