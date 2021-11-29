@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .nav > li > a {
   color: rgb(129, 127, 127);
 }
@@ -5,3 +6,34 @@
 .nav > li.active > a {
   color: #C79A4B;
 }
+=======
+.navbar .navbar-brand img {
+    width: 50%;
+    height: 50%;
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+form p {
+    display: flex;
+    align-items: baseline;
+    align-self: center;
+    justify-content: center
+}
+
+form label {
+    margin-right: 3px;
+}
+
+form input {
+    display: flex;
+    align-items: center;
+}
+>>>>>>> abc9bc8958d1d4e3f1c346442f0d02590e2fbe53
